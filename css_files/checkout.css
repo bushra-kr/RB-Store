@@ -1,0 +1,36 @@
+/* Start Variables */
+:root {
+    --main-color: #C9A45C;
+    --darker-main-color: #aa8d53;
+    --secion-backgournd-color: #F1E9D8;
+    --header-text-color: #3D3328;
+    --text-color: #777;
+    --special-color: #ad5c70;
+    --second-special-color: #E8C7BE;
+    --transition: 0.3s;
+    --transparent-color: rgba(255, 255, 255, 0.61);
+    --section-padding: 100px;
+    --box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+    --font-awesome: 'Font Awesome 7 Free';
+}
+
+/* End Variables */
+/* Start Favorite Section */
+.favorite .flex-container .container {
+    height: 60vb;
+}
+.favorite .flex-container .container .text {
+    text-align: center;
+}
+
+.favorite .flex-container .container h3 {
+    margin-bottom: 10px;
+}
+
+.favorite .flex-container .container .special-button a {
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* End Favorite Section */

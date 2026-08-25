@@ -1,0 +1,247 @@
+/* Start Variables */
+:root {
+    --main-color: #C9A45C;
+    --darker-main-color: #aa8d53;
+    --secion-backgournd-color: #F1E9D8;
+    --header-text-color: #3D3328;
+    --text-color: #777;
+    --special-color: #ad5c70;
+    --second-special-color: #E8C7BE;
+    --transition: 0.3s;
+    --transparent-color: rgba(255, 255, 255, 0.61);
+    --section-padding: 100px;
+    --box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+    --font-awesome: 'Font Awesome 7 Free';
+}
+
+/* End Variables */
+/* Start Gobal Rules */
+p {
+    line-height: 1.4;
+}
+/* End Gobal Rules */
+/* ----------------Start Categories Page---------------- */
+/* Start Hero Section */
+.hero-section {
+    min-height: 30vh;
+    background-size: cover;
+}
+
+.hero-section {
+    position: relative;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.185);
+}
+
+.hero-section .content {
+    padding: 30px;
+    padding-right: 130px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--transparent-color);
+}
+
+@media (max-width: 767px) {
+    .hero-section .content {
+        width: 100%;
+        padding-left: 15px;
+        padding-right: 15px;
+        text-align: center;
+    }
+}
+
+.hero-section .content .text {
+    min-width: 70%;
+}
+
+.hero-section .content .text h2 {
+    font-size: 30px;
+    line-height: 1.2;
+    color: var(--header-text-color);
+}
+
+.hero-section .content .text h2 span {
+    color: var(--special-color)
+}
+
+.hero-section .content .text p {
+    margin-top: 12px;
+    font-size: 17px;
+    color: var(--header-text-color);
+}
+
+/* End Hero Section */
+/* Start Main Heading */
+.main-heading {
+    color: var(--header-text-color);
+    padding: 35px;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.main-heading h2 {
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--header-text-color);
+    width: fit-content;
+    position: relative;
+}
+
+.main-heading h2::before {
+    font-family: var(--font-awesome);
+    content: "\f004";
+    position: absolute;
+    background-color: white;
+    padding: 4px;
+    border-radius: 50%;
+    font-size: 12px;
+    bottom: -13px;
+    right: 50%;
+    transform: translateX(50%);
+}
+
+/* End Main Heading */
+/* Start Categories */
+/* Start Choose Categorie */
+.flex-container {
+    padding-top: 50px;
+}
+
+.flex-container .container {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.flex-container .container .choose {
+    display: flex;
+    margin-left: -40px;
+    flex-direction: column;
+    gap: 30px;
+    height: fit-content;
+    border-radius: 20px;
+}
+
+.flex-container .container .choose::before {
+    font-family: var(--font-awesome);
+    content: "\f054";
+    font-weight: 600;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    background-color: var(--secion-backgournd-color);
+    color: var(--header-text-color);
+    padding: 10px;
+    transition: var(--transition);
+    display: none;
+}
+
+.flex-container .container .choose-categorie {
+    background-color: var(--secion-backgournd-color);
+    border-radius: inherit;
+    width: 180px;
+    padding: 10px;
+}
+
+.flex-container .container .choose-categorie h3 {
+    padding: 15px 5px;
+}
+
+.flex-container .container .choose-categorie ul li.active {
+    background-color: var(--second-special-color);
+}
+
+.flex-container .container .choose-categorie ul li.active a {
+    color: var(--special-color);
+}
+
+.flex-container .container .choose-categorie ul li a {
+    display: block;
+    padding: 15px 10px;
+    width: 160px;
+    color: var(--header-text-color);
+    transition: var(--transition);
+}
+
+.flex-container .container .choose-categorie ul li a:hover {
+    color: var(--special-color);
+    background-color: var(--second-special-color);
+}
+
+.flex-container .container .choose-categorie ul li a {
+    padding-right: 10px;
+}
+
+.flex-container .container .choose-categorie ul li:not(:last-of-type) {
+    border-bottom: 1px solid var(--second-special-color);
+}
+
+/* End Choose Categorie */
+/* Start Choose Color */
+.flex-container .container .choose-color {
+    width: 180px;
+    background-color: var(--secion-backgournd-color);
+    border-radius: inherit;
+    padding: 15px;
+}
+
+.flex-container .container .choose-color .colors {
+    padding-top: 15px;
+    padding-right: 25px;
+}
+
+.flex-container .container .choose-color .colors span {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+@media (max-width: 767px) {
+    .flex-container .container {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .flex-container .container .choose {
+        background-color: var(--secion-backgournd-color);
+        position: absolute;
+        left: -100px;
+        z-index: 90;
+        transition: var(--transition);
+        gap: 5px;
+    }
+
+    .flex-container .container .choose:hover {
+        left: 8%;
+    }
+
+    .flex-container .container .choose::before {
+        display: block;
+    }
+
+    .flex-container .container .choose:hover::before {
+        transform: rotate(90deg);
+    }
+
+    .flex-container .container .boxes {
+        justify-content: center;
+    }
+
+}
+
+/* End Choose Color */
+/* End Categories */
+/* ----------------End Categories Page---------------- */

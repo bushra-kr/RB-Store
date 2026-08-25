@@ -1,0 +1,393 @@
+/* Start Variables */
+:root {
+    --main-color: #C9A45C;
+    --darker-main-color: #aa8d53;
+    --secion-backgournd-color: #F1E9D8;
+    --header-text-color: #3D3328;
+    --text-color: #777;
+    --special-color: #ad5c70;
+    --second-special-color: #E8C7BE;
+    --transition: 0.3s;
+    --transparent-color: rgba(255, 255, 255, 0.61);
+    --section-padding: 100px;
+    --box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+    --font-awesome: 'Font Awesome 7 Free';
+}
+
+/* End Variables */
+/* ----------------Start Main Page---------------- */
+/* Start Components */
+.main-heading {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-bottom: 1px solid var(--header-text-color);
+    padding-bottom: 40px;
+    color: var(--header-text-color);
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+.main-heading i {
+    color: var(--header-text-color);
+    font-size: 12px;
+    margin: 0 12px;
+}
+
+/* End Components */
+/* Start Hero Section */
+.hero-section {
+    min-height: 80vh;
+    background-size: cover;
+    -webkit-animation: change-background 9s infinite;
+    -moz-animation: change-background 9s infinite;
+    animation: change-background 9s infinite;
+}
+
+@keyframes change-background {
+    0% {
+        background-image: url('../pic/hero-section1.jpg');
+    }
+
+    33% {
+        background-image: url('../pic/hero-section2.jpg');
+    }
+
+    66% {
+        background-image: url('../pic/hero-section3.jpg');
+    }
+
+    100% {
+        background-image: url('../pic/hero-section1.jpg');
+    }
+}
+
+.hero-section {
+    position: relative;
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.185);
+}
+
+.hero-section .content {
+    padding: 30px;
+    padding-right: 130px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--transparent-color);
+}
+
+.hero-section .content .text {
+    width: 70%;
+}
+
+@media (max-width: 767px) {
+    .hero-section .content {
+        padding-right: 30px;
+    }
+
+    .hero-section .content .text {
+        margin: auto;
+        text-align: center;
+    }
+
+    .hero-section .content .special-button a {
+        margin: 15px auto;
+    }
+}
+
+.hero-section .content .text h2 {
+    font-size: 30px;
+    line-height: 1.2;
+    color: var(--header-text-color);
+}
+
+.hero-section .content .text h2 span {
+    color: var(--special-color)
+}
+
+.hero-section .content .text p {
+    margin-top: 12px;
+    font-size: 17px;
+    color: var(--header-text-color);
+}
+
+.hero-section .bullets {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.hero-section .bullets span {
+    width: 10px;
+    height: 10px;
+    border: 1px solid var(--special-color);
+    border-radius: 50%;
+    margin: 3px;
+}
+
+.hero-section .bullets span:first-child {
+    -webkit-animation: bullet1 9s infinite;
+    -moz-animation: bullet1 9s infinite;
+    animation: bullet1 9s infinite;
+}
+
+@keyframes bullet1 {
+
+    0%,
+    33% {
+        background-color: var(--special-color);
+    }
+}
+
+.hero-section .bullets span:nth-child(2) {
+    -webkit-animation: bullet2 9s 3s infinite;
+    -moz-animation: bullet2 9s 3s infinite;
+    animation: bullet2 9s 3s infinite;
+}
+
+@keyframes bullet2 {
+
+    0%,
+    33% {
+        background-color: var(--special-color);
+    }
+}
+
+.hero-section .bullets span:last-child {
+    -webkit-animation: bullet3 9s 6s infinite;
+    -moz-animation: bullet3 9s 6s infinite;
+    animation: bullet3 9s 6s infinite;
+}
+
+@keyframes bullet3 {
+
+    0%,
+    33% {
+        background-color: var(--special-color);
+    }
+}
+
+/* End Hero Section */
+/* Start Categories */
+.categories {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+
+.categories .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 50px 30px;
+    text-align: center;
+}
+
+.categories .container .categorie {
+    padding: 20px;
+    background-color: white;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.categories .container .categorie::before,
+.categories .container .categorie::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: var(--main-color);
+    transform: translateX(-50%);
+    transition: var(--transition);
+}
+
+.categories .container .categorie::before {
+    top: 0;
+    left: 50%;
+}
+
+.categories .container .categorie::after {
+    bottom: 0;
+    left: 50%;
+}
+
+.categories .container .categorie:hover::after,
+.categories .container .categorie:hover::before {
+    width: 90%;
+}
+
+.categories .container .categorie .image {
+    position: relative;
+    width: fit-content;
+}
+
+.categories .container .categorie .image::before {
+    content: "المزيد من العروض";
+    opacity: 0;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    font-size: 20px;
+    font-weight: bold;
+    transform: translate(-50%, -50%);
+    height: 50%;
+    width: 100%;
+    color: white;
+    border-radius: 33px;
+    background-color: var(--special-color);
+    opacity: 0;
+    z-index: 5;
+    transition: var(--transition);
+}
+
+.categories .container .categorie:hover .image::before {
+    opacity: 0.8;
+}
+
+.categories .container .categorie .image img {
+    width: 150px;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.categories .container .categorie:hover img {
+    transform: scale(1.05);
+    filter: grayscale(1);
+}
+
+.categories .container .categorie h3 {
+    font-weight: bold;
+    margin-top: 30px;
+    color: var(--header-text-color);
+}
+
+.categories .special-button a {
+    margin: 50px auto 0;
+    background-color: hsla(345, 33%, 52%, 0.5);
+}
+
+.categories .special-button i {
+    color: white;
+    font-size: 14px;
+    margin: 0 3px;
+}
+
+/* End Categories */
+/* Start Special Products */
+.flex-container .container .boxes {
+    justify-content: center;
+}
+/* End Special Products */
+/* Start Gift Section */
+.gift-section {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    background-image: url('../pic/create\ your\ gift.jpg');
+    background-size: cover;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.gift-section .content {
+    padding: 0 110px;
+}
+
+.gift-section .content .text h2 {
+    color: var(--header-text-color);
+    line-height: 1.6;
+}
+
+.gift-section .content .text p {
+    color: var(--text-color);
+    margin: 15px 0;
+    max-width: 400px;
+    line-height: 1.6;
+}
+
+/* End Gift Section */
+/* Start Customer Reviews */
+.reviews {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+}
+
+.reviews .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    padding-top: 100px;
+}
+
+.reviews .container .box {
+    background-color: white;
+    text-align: right;
+    position: relative;
+    padding: 16px 93px 16px 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.reviews .container .box img {
+    width: 28%;
+    border-radius: 50%;
+    position: absolute;
+    border: 10px solid white;
+    top: -38%;
+    right: -5%;
+}
+
+.reviews .container .box .text {
+    z-index: 2;
+}
+
+.reviews .container .box .text h2 {
+    color: var(--header-text-color);
+    font-size: 20px;
+}
+
+.reviews .container .box .text .stars {
+    color: #ebc90f;
+    font-size: 13px;
+    margin: 5px 0;
+}
+
+.reviews .container .box .text q {
+    margin: 5px 0;
+    color: var(--text-color);
+}
+
+@media (max-width: 725px) {
+    .reviews .container .box img {
+        width: 20%;
+        border-radius: 50%;
+        position: absolute;
+        border: 10px solid white;
+        top: 50%;
+        right: -5%;
+        transform: translateY(-50%);
+    }
+}
+
+/* End Customer Reviews */
+/* ----------------End Main Page---------------- */

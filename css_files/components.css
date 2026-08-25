@@ -1,0 +1,528 @@
+/* Start Variables */
+:root {
+    --main-color: #C9A45C;
+    --darker-main-color: #aa8d53;
+    --secion-backgournd-color: #F1E9D8;
+    --header-text-color: #3D3328;
+    --text-color: #777;
+    --special-color: #ad5c70;
+    --second-special-color: #E8C7BE;
+    --transition: 0.3s;
+    --transparent-color: rgba(255, 255, 255, 0.61);
+    --section-padding: 100px;
+    --box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+    --font-awesome: 'Font Awesome 7 Free';
+}
+
+/* End Variables */
+/* Start Gobal Rules */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: "Cairo", sans-serif;
+    direction: rtl;
+    background-color: var(--secion-backgournd-color);
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    padding: 0 40px;
+    margin: 0 auto;
+}
+
+/* small */
+@media (min-width: 768px) {
+    .container {
+        width: 740px;
+    }
+}
+
+/* medium */
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+/* large */
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+/* End Gobal Rules */
+/* Start Components */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--header-text-color);
+}
+
+p {
+    color: var(--header-text-color);
+}
+
+/* for buttons that does not have 'a' */
+input.special-button {
+    display: block;
+    background-color: var(--main-color);
+    color: white;
+    width: fit-content;
+    padding: 10px 20px;
+    border-radius: 9px;
+    margin: 15px 5px;
+}
+
+/* for buttons that has 'a' */
+.special-button a {
+    display: block;
+    background-color: var(--main-color);
+    color: white;
+    width: fit-content;
+    padding: 10px 20px;
+    border-radius: 9px;
+    margin: 15px 5px;
+}
+
+.special-button a:hover {
+    background-color: var(--darker-main-color);
+}
+
+.flex-container {
+    padding-top: var(--section-padding);
+    padding-bottom: var(--section-padding);
+    background-color: white;
+}
+
+.flex-container .container .boxes {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    background-color: white;
+}
+
+.special-box {
+    flex-basis: 200px;
+    padding: 5px;
+    height: fit-content;
+    background-color: var(--secion-backgournd-color);
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+    box-shadow: var(--box-shadow);
+}
+
+.special-box::before {
+    font-family: var(--font-awesome);
+    font-size: 400;
+    content: "\f004";
+    color: var(--header-text-color);
+    background-color: var(--secion-backgournd-color);
+    padding: 5px;
+    border-radius: 3px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.special-box>i {
+    color: var(--special-color);
+    position: absolute;
+    right: 13px;
+    top: 16px;
+    z-index: -1;
+}
+
+.special-box:hover>i {
+    z-index: 5;
+    cursor: pointer;
+}
+
+.special-box:hover {
+    transform: translateY(-10px);
+}
+
+.special-box img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.special-box:hover img {
+    filter: blur(1px);
+}
+
+.special-box .text {
+    text-align: right;
+}
+
+.special-box .text h2 {
+    font-size: 15px;
+    color: var(--header-text-color);
+    margin: 10px auto;
+}
+
+.special-box .text p {
+    font-size: 11px;
+    margin: 10px auto;
+    color: var(--text-color);
+}
+
+.special-box .text span {
+    margin: 10px;
+    color: var(--special-color);
+}
+
+.special-box .special-button a {
+    width: 100%;
+    padding: 7px;
+    text-align: center;
+    font-size: 13px;
+    margin: 15px auto;
+}
+
+/* Start Path */
+.path {
+    margin: 20px;
+}
+
+.path,
+.path a {
+    color: var(--header-text-color);
+}
+
+.path .active {
+    color: var(--main-color);
+}
+
+/* End Path */
+/* End Components */
+/* Start Header */
+.main-header {
+    background-color: var(--secion-backgournd-color);
+    text-align: center;
+    height: 40px;
+    padding: 13px 0;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+header {
+    background-color: white;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+header .container .logo img {
+    width: 70px;
+    cursor: pointer;
+}
+
+header .container .main-nav {
+    display: flex;
+}
+
+header .container .main-nav li a {
+    color: var(--header-text-color);
+    display: flex;
+    align-items: center;
+    font-size: 17px;
+    height: 70px;
+    padding: 0 15px;
+    position: relative;
+}
+
+header .container .main-nav li a.active {
+    color: var(--main-color);
+    border-bottom: 1px solid var(--main-color);
+}
+
+header .container .main-nav li :hover {
+    color: var(--main-color);
+    border-bottom: 1px solid var(--main-color);
+}
+
+header .container .icons {
+    display: flex;
+}
+
+header .container .icons i {
+    display: flex;
+}
+
+header .container .bar,
+header .container .fa-magnifying-glass,
+header .container .icons i {
+    align-items: center;
+    justify-content: center;
+    color: var(--main-color);
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+header i:hover {
+    background-color: var(--second-special-color);
+}
+
+header i.active {
+    background-color: var(--second-special-color);
+}
+
+header .container .bar,
+header .container .fa-magnifying-glass {
+    display: none;
+    padding: 30px;
+    color: var(--main-color);
+    font-size: 20px;
+}
+
+header .container .fa-magnifying-glass {
+    margin-right: auto;
+}
+
+@media (max-width: 767px) {
+
+    header .container .icons i {
+        display: none;
+    }
+
+    header .container .bar,
+    header .container .fa-magnifying-glass {
+        display: flex;
+    }
+}
+
+header .container .bar:hover+ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0%;
+    top: 100%;
+    width: 100%;
+    background-color: var(--transparent-color);
+    z-index: 4;
+}
+
+/* End Header */
+/* Start Fixed bar */
+.fixed-bar {
+    visibility: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    z-index: 100;
+}
+
+.fixed-bar .icons {
+    text-align: center;
+}
+
+.fixed-bar .icons i {
+    color: var(--main-color);
+    font-size: 20px;
+    padding: 15px 35px;
+}
+
+@media (max-width: 767px) {
+    header .container .main-nav {
+        display: none;
+    }
+
+    .fixed-bar {
+        visibility: visible;
+    }
+}
+
+/* End Fixed bar */
+/* Start Advantages Section */
+.advantages {
+    background: white;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.advantages .advantage {
+    display: flex;
+    padding: 45px 20px;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid var(--second-special-color);
+}
+
+.advantages .advantage:not(.advantage:last-child) {
+    border-left: 1px solid var(--second-special-color);
+}
+
+.advantages .advantage i {
+    color: var(--main-color);
+    font-size: 50px;
+}
+
+.advantages .advantage .text {
+    text-align: center;
+    padding: 0 15px;
+}
+
+.advantages .advantage .text h2 {
+    font-size: 20px;
+    color: var(--header-text-color);
+
+}
+
+.advantages .advantage .text P {
+    padding: 5px 0;
+    font-size: 15px;
+    color: var(--text-color);
+}
+
+/* End Advantages Section */
+/* Start Registration Secion */
+.registration {
+    padding-top: calc(var(--section-padding) - 50px);
+    padding-bottom: calc(var(--section-padding) - 50px);
+    background-color: var(--main-color);
+}
+
+.registration .container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.registration .container .text {
+    color: var(--header-text-color);
+}
+
+.registration .container .text p {
+    margin: 5px 0;
+}
+
+.registration .container form,
+.registration .container form .email {
+    position: relative;
+    margin: 10px;
+}
+
+.registration .container form i {
+    color: var(--main-color);
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+}
+
+.registration .container form input:focus {
+    outline: none;
+}
+
+.registration .container form input,
+.registration .container form button {
+    width: 270px;
+    border-radius: 20px;
+    border: none;
+    padding: 12px 38px 12px 30px;
+    color: var(--header-text-color);
+    cursor: pointer;
+}
+
+@media (min-width: 992px) {
+    .registration .container form button {
+        position: absolute;
+        padding: 12px 20px;
+        width: 110px;
+        top: 50%;
+        left: -20%;
+        transform: translateY(-50%);
+    }
+}
+
+/* End Registration Secion */
+/* Start Footer */
+footer {
+    background-color: var(--header-text-color);
+    padding-top: var(--section-padding);
+    padding-bottom: 80px;
+}
+
+footer .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    text-align: right;
+}
+
+footer .container .store a img {
+    max-width: 50%;
+}
+
+footer .container .store a figcaption {
+    font-size: 15px;
+    margin: 5px 0;
+    color: var(--main-color);
+}
+
+footer .container h5 {
+    color: var(--main-color);
+}
+
+footer .container ul {
+    margin: 10px 5px;
+    color: var(--main-color);
+}
+
+footer .container ul li a {
+    color: var(--secion-backgournd-color);
+}
+
+footer .container ul a:hover {
+    color: var(--special-color);
+}
+
+footer .copy-right {
+    margin: 50px auto 10px;
+    text-align: center;
+    color: var(--secion-backgournd-color);
+}
+
+@media (max-width: 768px) {
+    footer .container {
+        text-align: center;
+    }
+}
+
+/* End Footer */
